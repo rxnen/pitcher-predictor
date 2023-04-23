@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probable Pitchers Answer</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+  </head>
+  <body>
+    <div id="form-box">
+        <h1>Results</h1>
+        <h2>Your starting pitcher is...</h2>
+        <h2>{{pitcher['sp']}}</h2>
+        <h2>{{pitcher['gameday']}}</h2>
+        <h2>{{pitcher['score']}}</h2>
+        <h2>Rotation:</h2>
+        <ol>
+          {% for pitcher in pitcher['rotation'] %}
+          <li>{{ pitcher }}</li>
+          {% endfor %}
+        </ol>
+    </div>
+    <a style="font-size: 25px;" href="https://pitcher.bob-brown.com/">Back Home...</a>
+    <script>
+    </script>
+  </body>
+</html>
