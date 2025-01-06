@@ -2,13 +2,17 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probable Pitchers</title>
+    <title>MLB Probable Pitchers</title>
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/index.css') }}">
   </head>
   <body>
+    <div id="header">
+      <h1>MLB Probable Pitchers</h1>
+      <p>Powered by MLB-StatsAPI</p>
+    </div>
     <div id="form-box">
-        <h1>Probable Pitchers</h1>
-        <label for="teambox">Team Abbreviation:</label>
+      <div id="team-select">
+        <label for="teambox">Team:</label>
         <br>
         <select id="teambox">
             <option selected="true" disabled="disabled">Select Team</option>
@@ -43,20 +47,24 @@
             <option value="TOR">TOR</option>
             <option value="WAS">WAS</option>
         </select>
-        <br>
-        <br>
+      </div>
+
+      <div id="date-select">
         <label for="gamedate">Game Date:</label>
         <br>
         <input type="date" placeholder="Game Date" id="gamedate">
-        <br>
-        <br> 
-        <button onclick="submit()">Submit</button>
+      </div>
+
+      <div class="break"></div>
+
+      <button onclick="submit()">Submit</button>
     </div>
     <script>
       function submit() {
         var team = document.getElementById("teambox").value;
         var gameday = document.getElementById("gamedate").value;
-        location.href = "https://pitcher.bob-brown.com/result?team=" + team + "&gamedate=" + gameday
+        console.log(window.location.origin)
+        location.href =  window.location.origin + "/result?team=" + team + "&gamedate=" + gameday
       }
     </script>
   </body>

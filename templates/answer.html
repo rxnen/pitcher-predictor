@@ -6,12 +6,12 @@
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/index.css') }}">
   </head>
   <body>
-    <div id="form-box">
-        <h1>Results</h1>
-        <h2>Your starting pitcher is...</h2>
-        <h2>{{pitcher['sp']}}</h2>
-        <h2>{{pitcher['gameday']}}</h2>
-        <h2>{{pitcher['score']}}</h2>
+    <div id="result-box">
+        <h1>Results</h1><br/>
+        <h2>Your starting pitcher is...</h2><br/>
+        <h2>{{pitcher['sp']}}</h2><br/>
+        <h2>{{pitcher['gameday']}}</h2><br/>
+        <h2>{{pitcher['score']}}</h2><br/>
         <h2>Rotation:</h2>
         <ol>
           {% for pitcher in pitcher['rotation'] %}
@@ -19,7 +19,7 @@
           {% endfor %}
         </ol>
     </div>
-    <a style="font-size: 25px;" href="https://pitcher.bob-brown.com/">Back Home...</a>
+    <a style="font-size: 25px;" href="https://pitcher.ronenjain.com/">Back Home...</a>
     <script>
     </script>
   </body>
